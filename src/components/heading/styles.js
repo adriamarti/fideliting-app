@@ -6,11 +6,8 @@ const styles = makeStyles(theme => ({
     marginBottom: `${theme.spacing(2)}px`,
   },
   subtitle: {
-    marginBottom: `${theme.spacing(2)}px`,
+    marginBottom: `${theme.spacing(4)}px`,
   },
-  input: {
-    marginBottom: `${theme.spacing(2)}px`,
-  }
 }));
 
 export default styles;

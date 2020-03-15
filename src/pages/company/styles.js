@@ -7,6 +7,9 @@ const styles = makeStyles(theme => ({
     display: 'flex',
     margin: '0 !important',
   },
+  contentWrapper: {
+    padding: `${theme.spacing(2)}px`,
+  },
   transactionWrapper: {
     margin: '0 !important',
     backgroundColor: theme.palette.background.paper,
