@@ -84,7 +84,6 @@ const Navigation = ({ location }) => {
     setNavigationItemLabels(getNavigationLabels(location))
   }, [location]);
 
-
   return (
     <Box className={classes.root} boxShadow={3}>
       <div>
@@ -94,8 +93,10 @@ const Navigation = ({ location }) => {
         <List component="nav" aria-label={navigationItemLabels.join(' ')}>
           {navigationItems.map((navigationItem, index) =>
             <Link key={navigationItemLabels[index]} to={navigationItem.href}>
-              <ListItem button>
-                <ListItemIcon>
+              <ListItem button
+                selected={location.pathname.includes(navigationItem.href)}>
+                <ListItemIcon
+                  className={location.pathname.includes(navigationItem.href) ? classes.selectedIcon : ''}>
                   {navigationItem.icon}
                 </ListItemIcon>
               </ListItem>

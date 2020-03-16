@@ -18,6 +18,11 @@ const styles = makeStyles(theme => ({
     width: '20px',
     height: 'auto',
     margin: `${theme.spacing(2)}px auto`,
+  },
+  selectedIcon: {
+    '& svg': {
+      color: theme.palette.primary.main,
+    }
   }
 }));
 
