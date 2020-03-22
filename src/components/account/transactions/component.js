@@ -1,6 +1,6 @@
 // External Dependencies
-import React, { useState } from 'react';
-// import PropTypes from 'prop-types';
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
@@ -10,60 +10,19 @@ import ImportExportOutlinedIcon from '@material-ui/icons/ImportExportOutlined';
 // Internal Dependencies
 import styles from './styles';
 
-const fidelTransactions = [
-  {
-    type: 'income',
-    date: '2019-20-11',
-    owner: {
-      address: 'GCXHV7JDD5EDPR5VNM3OWIRRICPEKA73LYZIWABHDKSGREHLGZ6F5TOR',
-      type: 'Proceso de compensación'
-    },
-    amount: '3,23',
-    id: 'RXZSNVRoUnBHUHFVZW0rV3ZmektNUT09',
-  },
-  {
-    type: 'outcome',
-    date: '2019-20-11',
-    owner: {
-      address: 'GCTK5BZCQPXN6EGXZHJPOVPFGTXLMPGNJW5ZFHUPEHKZ42N5EG4QVPWN',
-      type: 'Entrega a cliente'
-    },
-    amount: '-1,23',
-    id: 'RXZSNVRoUnBHUHFVZW0rV3ZmektNUT09',
-  },
-  {
-    type: 'income',
-    date: '2019-20-11',
-    owner: {
-      address: 'SAZVZEUVSWO2R7EDRKV4C4SCFORQVHDYJ4H4NYBRMYTIQQV6FVYO6QQN',
-      type: 'Compra de Fidels'
-    },
-    amount: '200',
-    id: 'RXZSNVRoUnBHUHFVZW0rV3ZmektNUT09',
-  },
-  {
-    type: 'outcome',
-    date: '2019-20-11',
-    owner: {
-      address: 'GCTK5BZCQPXN6EGXZHJPOVPFGTXLMPGNJW5ZFHUPEHKZ42N5EG4QVPWN',
-      type: 'Entrega a cliente'
-    },
-    amount: '-1,23',
-    id: 'RXZSNVRoUnBHUHFVZW0rV3ZmektNUT09',
-  },
-  {
-    type: 'income',
-    date: '2019-20-11',
-    owner: {
-      address: 'GCXHV7JDD5EDPR5VNM3OWIRRICPEKA73LYZIWABHDKSGREHLGZ6F5TOR',
-      type: 'Proceso de compensación'
-    },
-    amount: '6,98',
-    id: 'RXZSNVRoUnBHUHFVZW0rV3ZmektNUT09',
-  },
-]
-
-const Component = () => {
+const Component = ({
+  getFidelTransactions,
+  getSFidelTransactions,
+  isFetchingFidel,
+  isFetchingSFidel,
+  fidel,
+  sFidel
+}) => {
+  useEffect(() => {
+    getFidelTransactions();
+    getSFidelTransactions();
+  }, []);
+  
   const classes = styles();
   const [value, setValue] = useState(0);
 
@@ -79,8 +38,8 @@ const Component = () => {
       </Tabs>
       <div className={classes.panels}>
         <div role="tabpanel" hidden={value !== 0}>
-          {fidelTransactions.map(({ type, date, owner, amount, id}) =>
-            <Paper elevation={3} className={classes[type]}>
+          {fidel.map(({ type, date, owner, amount, id}) =>
+            <Paper key={id} elevation={3} className={classes[type]}>
               <Typography component="span" variant="caption">Fecha: {date}</Typography>
               <Typography component="span" variant="caption" className={classes.transactionId}>ID: {id}</Typography>
               <div className={classes.transactionData}>
@@ -101,5 +60,19 @@ const Component = () => {
     </div>
   );
 }
+
+Component.propTypes = {
+  getFidelTransactions: PropTypes.func.isRequired,
+  getSFidelTransactions: PropTypes.func.isRequired,
+  isFetchingFidel: PropTypes.bool.isRequired,
+  isFetchingSFidel: PropTypes.bool.isRequired,
+  fidel: PropTypes.array,
+  sFidel: PropTypes.array,
+};
+
+Component.defaultProps = {
+  fidel: [],
+  sFidel: [],
+};
 
 export default Component;

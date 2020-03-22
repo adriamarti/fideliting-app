@@ -4,11 +4,11 @@ import { fork } from 'redux-saga/effects';
 // import company from '../containers/company/sagas';
 
 // Modules
-// import transactions from '../modules/transactions/sagas';
+import transactions from '../modules/transactions/sagas';
 
 export default function* sagas() {
   // Pages
   // yield fork(company);
   // Modules
-  // yield fork(transactions);
+  yield fork(transactions);
 }

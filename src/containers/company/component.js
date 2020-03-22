@@ -48,8 +48,4 @@ Component.propTypes = {
   subpage: PropTypes.string.isRequired,
 };
 
-Component.defaultProps = {
-  subpage: 'dashboard',
-};
-
 export default Component;

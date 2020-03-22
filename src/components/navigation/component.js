@@ -39,9 +39,4 @@ Component.propTypes = {
   selected: PropTypes.string.isRequired,
 };
 
-Component.defaultProps = {
-  type: 'company',
-  selected: 'dashboard',
-};
-
 export default Component;
