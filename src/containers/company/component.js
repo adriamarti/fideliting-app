@@ -2,6 +2,7 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
+import PropTypes from 'prop-types';
 
 // Internal Dependencies
 import Navigation from '../../components/navigation';
@@ -13,12 +14,12 @@ import Transactions from '../../components/account/transactions'
 import Buy from '../../components/forms/buy'
 import styles from './styles';
 
-export default function Company() {
+const Component = ({ subpage }) => {
   const classes = styles();
 
   return (
     <div className={classes.root}>
-      <Navigation />
+      <Navigation type="company" selected={subpage}/>
       <Grid container>
         <Grid item xs={12} md={8} className={classes.contentWrapper}>
           <Grid container>
@@ -42,3 +43,13 @@ export default function Company() {
     </div>
   );
 }
+
+Component.propTypes = {
+  subpage: PropTypes.string.isRequired,
+};
+
+Component.defaultProps = {
+  subpage: 'dashboard',
+};
+
+export default Component;

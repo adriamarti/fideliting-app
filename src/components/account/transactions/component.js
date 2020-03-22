@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
 import ImportExportOutlinedIcon from '@material-ui/icons/ImportExportOutlined';
 
@@ -64,7 +63,7 @@ const fidelTransactions = [
   },
 ]
 
-const Balance = () => {
+const Component = () => {
   const classes = styles();
   const [value, setValue] = useState(0);
 
@@ -103,4 +102,4 @@ const Balance = () => {
   );
 }
 
-export default Balance;
+export default Component;

@@ -1,7 +1,6 @@
 // External Dependencies
-import React, { useState } from 'react';
+import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 
@@ -9,7 +8,7 @@ import Paper from '@material-ui/core/Paper';
 import buy from '../../../assets/images/buy.jpg'
 import styles from './styles';
 
-const Transaction = () => {
+const Component = () => {
   const classes = styles();
 
   const openDialog = (event) => {
@@ -35,4 +34,4 @@ const Transaction = () => {
   );
 }
 
-export default Transaction;
+export default Component;

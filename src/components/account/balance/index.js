@@ -1,1 +1,1 @@
-export { default } from './balance';
+export { default } from './component';

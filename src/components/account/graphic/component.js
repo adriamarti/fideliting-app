@@ -1,6 +1,5 @@
 // External Dependencies
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
 import { Line } from 'react-chartjs-2';
 
 // Internal Dependencies
@@ -33,7 +32,7 @@ const data = {
   ]
 };
 
-const Balance = () => {
+const Component = () => {
   const classes = styles();
 
   return (
@@ -46,4 +45,4 @@ const Balance = () => {
   );
 }
 
-export default Balance;
+export default Component;

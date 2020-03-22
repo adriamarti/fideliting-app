@@ -1,1 +1,1 @@
-export { default } from './buy';
+export { default } from './component';

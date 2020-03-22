@@ -1,12 +1,12 @@
 // External Dependencies
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { withRouter } from "react-router-dom";
 
 // Internal Dependencies
 import styles from './styles';
 
-const Heading = ({ location }) => {
+const Component = ({ location }) => {
   const classes = styles();
   let textStrings = {
     header: '',
@@ -38,4 +38,4 @@ const Heading = ({ location }) => {
   );
 }
 
-export default withRouter(Heading);
+export default withRouter(Component);

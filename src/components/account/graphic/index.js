@@ -1,1 +1,1 @@
-export { default } from './graphic';
+export { default } from './component';

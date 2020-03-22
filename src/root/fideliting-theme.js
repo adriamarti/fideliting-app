@@ -1,12 +1,6 @@
 // External Dependencies
-import React from 'react';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import { CssBaseline } from '@material-ui/core';
+import { createMuiTheme } from '@material-ui/core/styles';
 
-// Internal Dependencies
-import Routes from './routes'
-
-// Material UI Theme
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -27,13 +21,4 @@ const theme = createMuiTheme({
   },
 });
 
-function App() {
-  return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Routes />
-    </ThemeProvider>
-  );
-}
-
-export default App;
+export default theme;

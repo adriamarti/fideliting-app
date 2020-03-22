@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import { isValidEmail, isValidNumber } from '../../../utils/form-validations'
 import styles from './styles';
 
-const Transaction = () => {
+const Component = () => {
   const classes = styles();
   const helperTexts = {
     email: {
@@ -141,4 +141,4 @@ const Transaction = () => {
   );
 }
 
-export default Transaction;
+export default Component;

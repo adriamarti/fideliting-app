@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 // Internal Dependencies
 import styles from './styles';
 
-const Balance = () => {
+const Component = () => {
   const classes = styles();
 
   return (
@@ -22,4 +22,4 @@ const Balance = () => {
   );
 }
 
-export default Balance;
+export default Component;
